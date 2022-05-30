@@ -7,10 +7,19 @@
         {
             this.message = message;
         }
-        public string MoodAnalys()
+        public string AnalyseMood()
         {
             try
             {
+                if (message == null)
+                {
+                    throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.NULL_MOOD, "message is Null");
+                }
+                if (message.Equals(""))
+                {
+                    throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.EMPTY_MOOD, "message is Empty");
+
+                }
                 if (message.ToLower().Contains("sad"))
                 {
                     return "Sad";
@@ -19,11 +28,10 @@
                 {
                     return "Happy";
                 }
-                return message;
             }
-            catch (Exception)
+            catch (MoodAnalyserException ex)
             {
-                return "Happy";
+                return ex.Message;
             }
         }
     }
