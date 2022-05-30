@@ -13,7 +13,7 @@ namespace AnalyzerTest
             try
             {
                 MoodAnalyser analyzer = new MoodAnalyser("");
-                string actual = analyzer.AnalyseMood();
+                string actual = analyzer.MoodAnalyze();
             }
             catch (MoodAnalyserException ex)
             {
@@ -26,7 +26,7 @@ namespace AnalyzerTest
             try
             {
                 MoodAnalyser analyzer = new MoodAnalyser(null);
-                string actual = analyzer.AnalyseMood();
+                string actual = analyzer.MoodAnalyze();
             }
             catch (MoodAnalyserException ex)
             {
