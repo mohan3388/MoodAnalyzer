@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoodAnalyzer
+namespace MoodAnalyzers
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(String[] args)
         {
+
         }
     }
 }

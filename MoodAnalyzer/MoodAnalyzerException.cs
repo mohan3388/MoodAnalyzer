@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoodAnalyzer
+namespace MoodAnalyze
 {
-    public class MoodAnalyserException : Exception
+    public class MoodAnalyzerException : Exception
     {
         public enum ExceptionType
         {
             NULL_MOOD, EMPTY_MOOD, NO_SUCH_CLASS, NO_SUCH_METHOD
         }
         public ExceptionType exceptionType;
-        public MoodAnalyserException(ExceptionType type, string message) : base(message)
+        public MoodAnalyzerException(ExceptionType type, string message) : base(message)
         {
             this.exceptionType = type;
         }
