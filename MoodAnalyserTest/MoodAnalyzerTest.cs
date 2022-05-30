@@ -53,12 +53,18 @@ namespace AnalyseTest
             object obj = MoodAnalyserFactory.ParameterizedConstructor("MoodAnalyze.MoodAnalyzer", "MoodAnalyzer", "HAPPY");
             expected.Equals(obj);
         }
-        [TestMethod]
+
         public void GivenHappyMoodShouldReturnHappy()
         {
             string expected = "Happy";
             string mood = MoodAnalyserFactory.InvokeAnalyzerMood("Happy", "AnalyzeMood");
             Assert.AreEqual(expected, mood);
+        }
+        [TestMethod]
+        public void Use_Reflection_return_Happy()
+        {
+            string result = MoodAnalyserFactory.DynamicallySetField("HAPPY", "message");
+            Assert.AreEqual("HAPPY", result);
         }
     }
 }
